@@ -37,7 +37,7 @@ def Predict_sc():
     '''  
     horus_value = request.args.get('horus')
     horus_value = float(horus_value)   
-    y_pred = loaded_model1.predict([[horus_value]]) 
+    y_pred = loaded_model1.predict([[horus_value]])
     return jsonify({"prediction": float(y_pred[0])})
 
 @app.route("/predict_image", methods=['POST','GET'])    # Handle POST and GET requests to '/upload_image'  
@@ -53,7 +53,10 @@ def pridict_img():
 
     predictions = loaded_model.predict(img_array)
     score = float(keras.ops.sigmoid(predictions[0][0]))
-    return jsonify(f"This image is {100 * (1 - score):.2f}% cat and {100 * score:.2f}% dog.")
+    if score > 50:
+        return jsonify({"predict_result": "cat"})
+    else:
+        return jsonify({"predict_result": "dog"})
 
 
 if __name__ == "__main__":    # Run the app only if this file is executed directly  
