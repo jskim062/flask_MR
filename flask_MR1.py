@@ -53,7 +53,7 @@ def pridict_img():
 
     predictions = loaded_model.predict(img_array)
     score = float(keras.ops.sigmoid(predictions[0][0]))
-    if score > 50:
+    if score > 0.5:
         return jsonify({"predict_result": "cat"})
     else:
         return jsonify({"predict_result": "dog"})
