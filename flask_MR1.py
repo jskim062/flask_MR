@@ -10,9 +10,9 @@ loaded_model = keras.models.load_model("save_at_25.keras")
 app = Flask(__name__)                     # Create a Flask application
 
 
-@app.route('/hello')                      # Handle GET requests to '/hello'
+@app.route('/hi')                      # Handle GET requests to '/hello'
 def hello_world():
-    return 'Hello, World!'                # Return a simple greeting
+    return 'hi, World!'                # Return a simple greeting
 
 
 @app.route('/echo', methods=['POST', 'GET'])   # Handle POST and GET requests to '/echo'
