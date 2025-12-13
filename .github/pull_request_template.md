@@ -7,7 +7,7 @@ Please describe your changes in detail.
   
 ## Related Issue  
   
-Closes #2 (issue number)  
+Closes #3 (issue number)  
   
 ## Type of Change  
   
