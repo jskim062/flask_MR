@@ -11,7 +11,7 @@ app = Flask(__name__)                     # Create a Flask application
 
 
 @app.route('/hi')                      # Handle GET requests to '/hello'
-def hello_world():
+def hi_world():
     return 'hi, World!'                # Return a simple greeting
 
 

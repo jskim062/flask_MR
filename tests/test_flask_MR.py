@@ -13,10 +13,10 @@ def client():
         yield client
 
 
-def test_hello(client):
-    response = client.get('/hello')
+def test_hi(client):
+    response = client.get('/hi')
     assert response.status_code == 200
-    assert b'Hello, World!' in response.data
+    assert b'hi, World!' in response.data
 
 
 def test_echo(client):
